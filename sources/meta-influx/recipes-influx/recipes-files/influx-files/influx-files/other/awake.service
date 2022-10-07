@@ -1,0 +1,15 @@
+# ExecStart is executed on wake up from 'sleep' (suspend or hibernate).
+[Unit]
+#WantedBy=sleep.target
+After=systemd-suspend.service systemd-hybrid-sleep.service systemd-hibernate.service
+
+[Service]
+Type=simple
+#ExecStart=/bin/bash -c 'echo awake from sleep' >> /tmp/awake.notes'
+ExecStart=/lib/systemd/system-sleep/awake.sh
+
+[Install]
+WantedBy=multi-user.target
+
+
+

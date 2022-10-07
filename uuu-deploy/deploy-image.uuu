@@ -1,0 +1,28 @@
+uuu_version 1.2.39
+
+SDP: boot -f files//imx-boot-imx8mmea-ucom-sd.bin
+# This command will be run when use SPL
+SDPV: write -f files//imx-boot-imx8mmea-ucom-sd.bin -offset 0x57c00
+SDPV: jump
+# This command will be run when ROM support stream mode
+SDPS: boot -f files//imx-boot-imx8mmea-ucom-sd.bin
+
+# Reset u-boot environment variables
+#FB: ucmd env default -f -a
+#FB: ucmd saveenv
+
+# Flash file systems and then the bootloader
+FB: ucmd setenv fastboot_dev mmc
+FB: ucmd setenv mmcdev ${emmc_dev}
+FB: ucmd mmc dev ${emmc_dev}
+FB: flash -raw2sparse all files//ea-image-base-imx8mmea-ucom.sdimg
+FB: ucmd mmc partconf ${emmc_dev} 1 7 0
+
+FB: ucmd setenv bootdelay 0
+FB: ucmd setenv extra_bootargs quiet
+FB: ucmd setenv args_from_script quiet
+FB: ucmd setenv mender_dtb_name "imx8mm-ea-ucom-kit_v2-1mw.dtb"
+FB: ucmd setenv fdt_file "boot/imx8mm-ea-ucom-kit_v2-1mw.dtb"
+FB: ucmd saveenv
+
+FB: done

@@ -1,0 +1,2 @@
+*/5 * * * * /etc/mender/scripts/ArtifactReboot_Leave_00
+*/1 * * * * /etc/profile.d/firststart.sh

@@ -1,0 +1,10 @@
+[Unit]
+Description= Init GNSS hardware to send data
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/opt/influx/gnssdata_start.sh
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,8 @@
+# Wireless interfaces
+auto wlan0
+iface wlan0 inet dhcp
+        post-up /usr/sbin/wpa_supplicant -B -i wlan0 -D wext -c /etc/wpa_supplicant.conf
+        post-up /sbin/dhclient wlan0
+        post-up /opt/influx/mender_client_start.sh
+        down killall -q wpa_supplicant
+        down killall -q dhclient

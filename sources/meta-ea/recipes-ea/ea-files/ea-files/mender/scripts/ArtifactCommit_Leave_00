@@ -1,0 +1,5 @@
+#!/bin/sh
+
+/usr/bin/crontab -u root -l | { cat; echo "*/10 * * * * /etc/mender/scripts/ArtifactReboot_Leave_00"; } |  /usr/bin/crontab -
+
+exit 0

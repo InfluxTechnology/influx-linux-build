@@ -1,0 +1,3 @@
+send 'AT+UGRMC=1\n'
+send 'AT+UGGGA=1\n'
+exit

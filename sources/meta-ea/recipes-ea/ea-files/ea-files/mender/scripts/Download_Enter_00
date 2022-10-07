@@ -1,0 +1,24 @@
+#!/bin/sh
+
+#cp /etc/wpa_supplicant.conf /data/mender/wpa_supplicant.conf
+#cp /etc/mender/mender.conf  /data/mender/mender.conf 
+#cp /opt/influx/mender_client_start.sh /data/mender/mender_client_start.sh 
+
+FILES=$(cat /data/mender/preserved-files | grep -v '#' )
+tar -czf /data/mender/preserved-files.tgz $FILES 
+
+# to add this job in crontab just one time
+#/usr/bin/crontab -u root -l |  /bin/grep -v "* /etc/mender/scripts/ArtifactReboot_Leave_00" |  /usr/bin/crontab -
+#/usr/bin/crontab -u root -l | { cat; echo "*/2 * * * * /etc/mender/scripts/ArtifactReboot_Leave_00"; } | /usr/bin/crontab -
+
+echo "Download Enter" > /data/mender/Download-Enter
+mender show-artifact > /data/mender/mender_artifact
+
+ifconfig | grep ppp0
+#if [[ $? -ne 0 ]]; then
+#	echo "" > /data/mender/LTE_ppp
+#fi
+
+exit 0
+
+

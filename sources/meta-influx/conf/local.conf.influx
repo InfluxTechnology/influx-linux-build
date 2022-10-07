@@ -1,0 +1,41 @@
+
+# Appended fragment from Influx Technology
+
+PACKAGECONFIG_append_pn-nodejs = " openssl"
+PReferred-version-nodejs ?="8.9.4"
+
+IMAGE_INSTALL_append += " ppp "
+IMAGE_INSTALL_append += " nodejs "
+IMAGE_INSTALL_append += " nodejs-npm "
+IMAGE_INSTALL_append += " packagegroup-core-buildessential "
+IMAGE_INSTALL_append += " openssh-sftp-server "
+IMAGE_INSTALL_append += " bluez5 "
+IMAGE_INSTALL_append += " caam-keygen "
+IMAGE_INSTALL_append += " git "
+IMAGE_INSTALL_append += " rsync "
+IMAGE_INSTALL_append += " curl "
+IMAGE_INSTALL_append += " cronie "	
+IMAGE_INSTALL_append += " minicom "
+IMAGE_INSTALL_append += " wvdial "	
+IMAGE_INSTALL_append += " setserial "	
+IMAGE_INSTALL_append += " gdbserver "
+IMAGE_INSTALL_append += " openssh-sftp-server "
+IMAGE_INSTALL_append += " htop "	
+IMAGE_INSTALL_append += " tcpdump "
+IMAGE_INSTALL_append += " python3 "
+IMAGE_INSTALL_append += " fsl-rc-local "
+
+#IMAGE_INSTALL_remove += " weston-init "
+#IMAGE_INSTALL_remove += " weston "
+#IMAGE_INSTALL_remove += " cpsplash_git "
+
+#IMAGE_INSTALL_remove += " ser2net "
+#IMAGE_INSTALL_remove += " ckermit "
+#IMAGE_INSTALL_remove += " picocom "
+#IMAGE_INSTALL_remove += " libdrm "
+
+CORE_IMAGE_EXTRA_install += " cryptodev-module openssl-bin "
+CORE_IMAGE_EXTRA_install += " dhcp-server dhcp-client "
+CORE_IMAGE_EXTRA_install += " coreutils lvm2 e2fsprogs-mke2fs util-linux keyutils "
+CORE_IMAGE_EXTRA_install += " ldd "
+

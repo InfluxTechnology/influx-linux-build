@@ -1,0 +1,5 @@
+send 'AT+USIO=4\n'
+send 'AT+UGPRF=1\n'
+send 'AT+UGIND=1\n'
+send 'AT+UGPS=1,0,3\n'
+exit

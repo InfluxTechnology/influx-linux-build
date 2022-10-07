@@ -1,0 +1,10 @@
+[Unit]
+Description=Launch my application
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/etc/profile.d/autostart.sh
+
+[Install]
+WantedBy=multi-user.target

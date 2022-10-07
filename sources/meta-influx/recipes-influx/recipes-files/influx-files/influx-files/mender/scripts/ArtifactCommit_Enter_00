@@ -1,0 +1,23 @@
+#!/bin/sh
+# Wait until the network is connected 
+# before commiting an update
+
+RETRY_LATER=21
+OK=0
+
+# start wlan communication
+/sbin/ifconfig wlan0 up
+if test -f /var/run/wpa_supplicant/wlan0; then
+    rm /var/run/wpa_supplicant/wlan0
+fi
+/usr/sbin/wpa_supplicant -B -i wlan0 -D wext -c /etc/wpa_supplicant.conf > /dev/null
+/sbin/dhclient wlan0 > /dev/null
+
+sleep 2
+FLAG=$(/sbin/ifconfig wlan0 | grep 'inet addr:' | cut -d: -f2)
+if [[ $FLAG != "" ]]; then
+#        /opt/influx/mender_client_start.sh
+	exit ${OK}
+fi
+
+exit ${RETRY_LATER}

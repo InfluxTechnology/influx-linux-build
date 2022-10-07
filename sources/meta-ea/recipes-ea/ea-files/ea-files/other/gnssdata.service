@@ -1,0 +1,12 @@
+[Unit]
+Description= Colect GNSS data
+After=basic.target
+
+[Service]
+Type=simple
+ExecStart=/home/root/gnssdata/gnssdata &
+Restart=always
+
+[Install]
+WantedBy=default.target
+
