@@ -32,6 +32,7 @@ Initialize build
 Before starting the build, it must be initialized. In this step the build directory and local configuration files are created. 
 
 DISTRO=fsl-imx-wayland MACHINE=imx8mmea-ucom source influx-environment-setup -b build-dir
+
 where DISTRO is supported distro MACHINE is machine configuration for Influx technology iMX8M based chip and build-dir is your build directory
 
 
