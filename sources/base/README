@@ -1,59 +1,67 @@
-Freescale's Community Yocto BSP
-===============================
+Using Yocto to build Linux
+==========================
 
-Supported boards
+Required Packages for the build host
+------------------------------------
+
+The list of packages you need on the host development system can be large when covering all build scenarios using the Yocto Project. This section describes required packages according to Linux distribution and function.
+Here are the required packages by function given a supported Ubuntu or Debian Linux distribution:
+If your build system has the oss4-dev package installed, you might experience QEMU build failures due to the package installing its own custom /usr/include/linux/soundcard.h on the Debian system. If you run into this situation, try either of these solutions:
+
+sudo apt build-dep qemu
+sudo apt remove oss4-dev
+ 
+sudo apt install gawk wget git diffstat unzip texinfo gcc build-essential chrpath socat cpio python3 python3-pip python3-pexpect xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev pylint3 xterm python3-subunit mesa-common-dev zstd liblz4-tool
+sudo apt-get install u-boot-tools
+sudo apt-get install apt-transport-https ca-certificates
+sudo update-ca-certificates
+
+
+Download influx sources
+-----------------------
+
+In your home directory download influx-linux-build sources from github
+
+git clone https://github.com/InfluxTechnology/influx-linux-build.git -b main
+
+
+
+Initialize build
 ----------------
 
-In order to know the supported boards, please, see the release notes at
+Before starting the build, it must be initialized. In this step the build directory and local configuration files are created. 
 
-   http://freescale.github.io/doc/release-notes/current/
+DISTRO=fsl-imx-wayland MACHINE=imx8mmea-ucom source influx-environment-setup -b build-dir
+where DISTRO is supported distro MACHINE is machine configuration for Influx technology iMX8M based chip and build-dir is your build directory
 
-Quick Start Guide
------------------
 
-Once you have downloaded the source of all projects, you will have to
-call:
+Restart a build
+---------------
 
-$: . ./setup-environment <build directory>
+If you need to restart a build in a new terminal window or after a restart of the host computer you don’t need to run the influx-environment-setup script again. Instead, you run the setup-environment script
 
-After this step, you will be with everything need for build an image.
+source setup-environment build-dir
 
-Contributing
-------------
 
-To contribute to the development of this BSP and/or submit patches for
-new boards please send the patches against the respective project as
-informated bellow:
+Starting the build
+------------------
 
-The following layers are included on this release:
+Everything has now been setup to start the actual build. Please note that depending on the capabilities of your host computer building an image can take many hours.
 
- * poky: base build system and metadata
-   Path: sources/poky
-   GIT: git://git.yoctoproject.org/poky
-   Mailing list: https://lists.yoctoproject.org/listinfo/yocto
+bitbake ea-image-base
 
- * meta-openembedded: extra packages and features
-   Path: sources/meta-openembedded
-   GIT: git://git.openembedded.org/meta-openembedded
-   Mailing list: http://lists.linuxtogo.org/cgi-bin/mailman/listinfo/openembedded-devel
-   Note: Use [meta-oe] in subject to easy the processing
+When the build has finished the images will be available in this directory
+~/ influx-linux/ build-dir/tmp/deploy/images/imx8mmea-ucom/
 
- * meta-freescale: support for Freescale's processors and board
-   Path: sources/meta-freescale
-   Project: https://github.com/Freescale/meta-freescale
-   GIT: git://github.com/Freescale/meta-freescale.git
-   Mailing list: https://lists.yoctoproject.org/listinfo/meta-freescale
 
- * meta-freescale-3rdparty: support for boards using Freescale's processors
-   Path: sources/meta-freescale-3rdparty
-   Project: https://github.com/Freescale/meta-freescale-3rdparty
-   GIT: git://github.com/Freescale/meta-freescale-3rdparty.git
-   Mailing list: https://lists.yoctoproject.org/listinfo/meta-freescale
-   Note: Use [3rdparty] in subject to easy the processing
+Deploying the image
+-------------------
 
- * meta-freescale-distro: distribution images and recipes
-   Path: sources/meta-freescale-distro
-   Project: https://github.com/Freescale/meta-freescale-distro
-   GIT: git://github.com/Freescale/meta-freescale-distro.git
-   Mailing list: https://lists.yoctoproject.org/listinfo/meta-freescale
-   Note: Use [distro] in subject to easy the processing
+The development board must be set in OTG boot mode for it to work  Go to one level up in directory tree in ~/ influx-linux and start this script
+
+./deploy-image.sh build-dir
+
+We are using uuu (Universal Update Utility) tool to write images to the board. It is located in 
+~/ influx-linux/uuu-deploy/ directory. The script upper, will copy needed files from 
+~/ influx-linux/ build-dir/tmp/deploy/images/imx8mmea-ucom/ to 
+~/ influx-linux/uuu-deploy/files and will start the deploying.
