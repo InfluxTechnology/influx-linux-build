@@ -7,7 +7,7 @@ BS_:
 BU_: AdcDig
 
 BO_ 294 Digital: 6 AdcDig
- SG_ Digital_1 : 16|8@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Digital_1 : 8|8@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Digital_0 : 0|8@1+ (1,0) [0|1] "" Vector__XXX
 
 BO_ 295 Analog: 8 AdcDig
