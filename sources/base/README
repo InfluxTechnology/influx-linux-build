@@ -25,7 +25,6 @@ In your home directory download influx-linux-build sources from github
 git clone https://github.com/InfluxTechnology/influx-linux-build.git -b main
 
 
-
 Initialize build
 ----------------
 
@@ -52,7 +51,7 @@ Everything has now been setup to start the actual build. Please note that depend
 bitbake ea-image-base
 
 When the build has finished the images will be available in this directory
-~/influx-linux/ build-dir/tmp/deploy/images/imx8mmea-ucom/
+~/influx-linux/build-dir/tmp/deploy/images/imx8mmea-ucom/
 
 
 Deploying the image
@@ -64,5 +63,5 @@ The development board must be set in OTG boot mode for it to work  Go to one lev
 
 We are using uuu (Universal Update Utility) tool to write images to the board. It is located in 
 ~/influx-linux/uuu-deploy/ directory. The script upper, will copy needed files from 
-~/influx-linux/ build-dir/tmp/deploy/images/imx8mmea-ucom/ to 
+~/influx-linux/build-dir/tmp/deploy/images/imx8mmea-ucom/ to 
 ~/influx-linux/uuu-deploy/files and will start the deploying.
