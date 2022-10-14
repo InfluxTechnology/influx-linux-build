@@ -72,19 +72,11 @@ SRC_URI = "file://rexusb/libusb.so \
 	file://mender/mender.conf \
 	file://mender/mender-device-identity_ppp \
 	file://mender/mender_client_start.sh \
-	file://mender/preserved-files \
-	file://mender/scripts/ArtifactCommit_Enter_00 \
-	file://mender/scripts/ArtifactCommit_Leave_00 \
-	file://mender/scripts/ArtifactCommit_Leave_01_cron-job \
-	file://mender/scripts/ArtifactInstall_Enter_01_info \
-	file://mender/scripts/ArtifactInstall_Error_00 \
-	file://mender/scripts/ArtifactInstall_Leave_00 \
-	file://mender/scripts/ArtifactReboot_Enter_01_info \
+	file://mender/preserved-files \	
 	file://mender/scripts/ArtifactReboot_Leave_00 \
 	file://mender/scripts/Download_Enter_00 \
 	file://mender/scripts/Download_Error_00 \
 	file://mender/scripts/Download_Leave_00 \
-	file://mender/scripts/Sync_Enter_01_info \
 	file://gnss/gnssdata \
 	file://gnss/escape.minicom \
 	file://gnss/GNSS.v3.dbc \
