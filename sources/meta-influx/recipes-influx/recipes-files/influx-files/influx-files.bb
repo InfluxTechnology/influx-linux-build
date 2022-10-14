@@ -38,7 +38,6 @@ SRC_URI = "file://rexusb/libusb.so \
 	file://other/node_modules.tar \
 	file://other/autostart.sh \
 	file://other/autostart.service \
-	file://other/gnssdata.service \
 	file://other/set_gpio.sh \
 	file://other/firststart.sh \
 	file://other/release_check.sh \
@@ -77,7 +76,6 @@ SRC_URI = "file://rexusb/libusb.so \
 	file://mender/scripts/Download_Enter_00 \
 	file://mender/scripts/Download_Error_00 \
 	file://mender/scripts/Download_Leave_00 \
-	file://gnss/gnssdata \
 	file://gnss/escape.minicom \
 	file://gnss/GNSS.v3.dbc \
 	file://gnss/AccelGyro.dbc \
