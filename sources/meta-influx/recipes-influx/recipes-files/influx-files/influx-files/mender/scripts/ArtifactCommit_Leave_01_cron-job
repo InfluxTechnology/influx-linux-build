@@ -1,5 +1,0 @@
-#!/bin/sh
-
-#echo "Artifact Commit Leave" >> /home/root/download
-
-#/usr/bin/crontab -u root -l |  /bin/grep -v "* /opt/influx/wlan_config.sh" |  /usr/bin/crontab -
