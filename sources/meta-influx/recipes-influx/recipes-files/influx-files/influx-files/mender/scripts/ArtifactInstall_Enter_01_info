@@ -1,5 +1,0 @@
-#!/bin/sh
-
-echo "Artifact Install Enter" >> /home/root/download
-
-cp /home/root/download /data/mender/download
