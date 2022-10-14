@@ -55,10 +55,8 @@ SRC_URI = "file://rexusb/libusb.so \
 	file://lte/SARA-R510M8S-01B-00_FW03.03_A00.01_PT.dof \
 	file://lte/options \
 	file://lte/1nce.provider \
-	file://lte/1nce.BG.provider \
 	file://lte/pap-secrets \
 	file://lte/1nce-new.chat \
-	file://lte/1nce-new.BG.chat \
 	file://lte/wvdial.conf \
 	file://lte/ublox-up-down-pin.sh \
 	file://lte/lte_start_ppp.sh \
