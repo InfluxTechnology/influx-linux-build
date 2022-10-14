@@ -1,3 +1,0 @@
-#!/bin/sh
-
-echo "Artifact Reboot Enter" >> /home/root/download 
