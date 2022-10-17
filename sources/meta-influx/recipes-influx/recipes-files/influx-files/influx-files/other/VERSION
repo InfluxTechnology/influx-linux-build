@@ -1,5 +1,5 @@
 ### Release notes ###
-V.1.1
+v.1.1
     Installed image packages
 	mender-full, python3, nodejs, nodejs-npm, packagegroup-core-buildessential, openssh-sftp-server, bluez5, 
 	caam-keygen, git, sync, curl, cronie, minicom, wvdial, setserial, gdbserver, openssh-sftp-server, htop, 
@@ -14,3 +14,8 @@ V.1.1
 	Two analog and digital channels support
 	Read NFC card
 	Example nodejs scripts
+v.1.2
+    rexgen_usb v.2.10 socketCAN driver
+	CAN FD support for CAN 0,1,2,3
+	Loopback mode for CAN 0,1
+	Silent Mode for CAN 0,1,2,3
