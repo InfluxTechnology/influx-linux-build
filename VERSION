@@ -14,3 +14,8 @@ v.1.1
 	Two analog and digital channels support
 	Read NFC card
 	Example nodejs scripts
+v.1.2
+    rexgen_usb v.2.10 socketCAN driver
+	CAN FD support for CAN 0,1,2,3
+	Loopback mode for CAN 0,1
+	Silent Mode for CAN 0,1,2,3
