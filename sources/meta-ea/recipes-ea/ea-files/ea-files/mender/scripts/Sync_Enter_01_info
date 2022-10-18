@@ -1,4 +1,0 @@
-#!/bin/sh
-
-rm /home/root/download
-echo "Sync Enter" >> /home/root/download

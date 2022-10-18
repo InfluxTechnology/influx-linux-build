@@ -1,5 +1,0 @@
-#!/bin/sh
-
-echo "Artifact Install Errot" >> /data/mender/log
-
-exit 0

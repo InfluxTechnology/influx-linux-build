@@ -1,5 +1,0 @@
-#!/bin/sh
-
-rm /data/mender/Download-Enter
-
-exit 0
