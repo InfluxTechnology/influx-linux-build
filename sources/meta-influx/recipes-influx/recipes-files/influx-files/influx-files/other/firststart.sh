@@ -31,11 +31,11 @@ if test -f /home/root/rexusb/rexgen_stream; then
 	chmod +x /home/root/rexusb/rexgen_stream
 fi
 rd_enabled=$(systemctl is-enabled rexgen_data.service)
-if [ "$rd_enabled" != "enabled" ];
-then
-	systemctl enable rexgen_data.service
-	systemctl start rexgen_data.service
-fi
+#if [ "$rd_enabled" != "enabled" ];
+#then
+#	systemctl enable rexgen_data.service
+#	systemctl start rexgen_data.service
+#fi
 
 # enable mender-connect service
 if test -f /opt/influx/mender-connect; then
