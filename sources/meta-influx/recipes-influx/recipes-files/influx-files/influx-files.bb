@@ -12,7 +12,7 @@ SRC_URI = "file://rexusb/libusb.so \
 	file://rexusb/demo/gnss2can.js \
 	file://rexusb/rexgen_data.service \
 	file://rexusb/rexgen_stream \
-	file://rexusb/firmware/firmware_3.23.bin \
+	file://rexusb/firmware/firmware_3.25.bin \
 	file://rexusb/config/Structure_v7.rxc \
 	file://rexusb/config/Structure_v8_4CAN.rxc \
 	file://rexusb/config/Structure_v7.xml \
@@ -151,7 +151,7 @@ do_install () {
     	install -m 0644 ${WORKDIR}/rexusb/demo/cansend.py ${D}${REX_USB_DIR}/demo/cansend.py
     	install -m 0644 ${WORKDIR}/rexusb/demo/gnss2can.js ${D}${REX_USB_DIR}/demo/gnss2can.js
     	install -m 0644 ${WORKDIR}/rexusb/rexgen_data.service ${D}/etc/systemd/system/rexgen_data.service
-    	install -m 0644 ${WORKDIR}/rexusb/firmware/firmware_3.23.bin ${D}${REX_FRM_DIR}/firmware_3.23.bin
+    	install -m 0644 ${WORKDIR}/rexusb/firmware/firmware_3.25.bin ${D}${REX_FRM_DIR}/firmware_3.25.bin
     	install -m 0644 ${WORKDIR}/rexusb/config/Structure_v7.rxc ${D}${REX_CFG_DIR}/Structure_v7.rxc
 	install -m 0644 ${WORKDIR}/rexusb/config/Structure_v7.xml ${D}${REX_CFG_DIR}/Structure_v7.xml
     	install -m 0644 ${WORKDIR}/rexusb/config/Structure_v8_4CAN.rxc ${D}${REX_CFG_DIR}/Structure_v8_4CAN.rxc
