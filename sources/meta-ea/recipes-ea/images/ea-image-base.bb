@@ -34,6 +34,7 @@ IMAGE_INSTALL = "\
    bluez5 \
    bluez5-noinst-tools \
    bluez5-obex \
+   murata-binaries \
    openobex \
    obexftp \
    glibc-gconv-utf-16 \
