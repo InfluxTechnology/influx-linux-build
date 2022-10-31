@@ -15,7 +15,7 @@ v.1.1
 	Read NFC card
 	Example nodejs scripts
 v.1.2
-    rexgen_usb v.2.11 socketCAN driver
+    rexgen_usb v.2.12 socketCAN driver
 	CAN FD support 
 	Loopback mode 
 	Silent Mode 
