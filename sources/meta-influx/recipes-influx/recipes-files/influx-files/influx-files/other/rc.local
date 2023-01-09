@@ -31,7 +31,7 @@ fi
 
 # setup hci0, wlan0, ppp0 interfaces
 /opt/influx/hci0.sh
-#/opt/influx/wlan0.sh 
+/opt/influx/wlan0.sh 
 #/opt/influx/lte_start_ppp.sh
 
 exit 0
