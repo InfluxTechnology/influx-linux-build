@@ -24,6 +24,7 @@ IMAGE_INSTALL_append += " htop "
 IMAGE_INSTALL_append += " tcpdump "
 IMAGE_INSTALL_append += " python3 "
 IMAGE_INSTALL_append += " fsl-rc-local "
+IMAGE_INSTALL_append += " dhcpcd "
 
 #IMAGE_INSTALL_remove += " weston-init "
 #IMAGE_INSTALL_remove += " weston "
