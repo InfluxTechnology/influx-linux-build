@@ -9,7 +9,8 @@ if [[ $FLAG == "" ]]; then
         rm /var/run/wpa_supplicant/wlan0
 
         /usr/sbin/wpa_supplicant -B -i wlan0 -D wext -c /etc/wpa_supplicant.conf
-        /sbin/dhclient wlan0
+#        /sbin/dhclient wlan0
+        /usr/sbin/dhcpcd wlan0
 
 fi
 
